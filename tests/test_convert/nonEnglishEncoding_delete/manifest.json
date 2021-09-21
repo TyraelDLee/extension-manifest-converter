@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "description": "Background scripts mv2",
+  "author": "Solomon Kinard",
+  "icons": {
+    "128": "icon.png"
+  },
+  "incognito": "split",
+  "manifest_version": 3,
+  "version": "1.0",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {}
+}

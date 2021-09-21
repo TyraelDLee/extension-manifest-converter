@@ -218,5 +218,15 @@ class TestConvert(unittest.TestCase):
 
     shutil.rmtree(self.destination)
 
+  def test_nonEnglish(self):
+    worker = Worker()
+    self.source += 'nonEnglishEncoding'
+    self.destination = self.source + '_delete'
+    worker.work(self.source)
+
+    expected = 3
+    actual = worker.wrapper.getManifestVersion()
+    self.assertEqual(actual, expected, 'manifest_version')
+
 if __name__ == '__main__':
   unittest.main()
